@@ -1,0 +1,18 @@
+---
+- name: playbook to play with vault
+  hosts: localhost
+  connection: local 
+  become: false
+
+  vars_files:
+    - protected.yml
+
+  tasks:
+    - name: clone a github repo
+      ansible.builtin.git:
+        repo: https://github.com/wiwr/ansible_trainig_vault.git
+        dest: /tmp/vault
+
+    - name: debug to check variable from vault
+      ansible.builtin.debug:
+        msg: "{{ value_to_show }}"
