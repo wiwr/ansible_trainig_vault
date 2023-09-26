@@ -1,4 +1,4 @@
-#Vault training
+# Vault training
 ```
  ansible-playbook vault.yml --ask-vault-pass
  ansible-vault create protected.yml 
